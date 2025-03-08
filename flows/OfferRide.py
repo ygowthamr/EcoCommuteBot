@@ -19,7 +19,7 @@ def get_pickup_location(message):
         return offer_ride(message)
     
     pickup_lat, pickup_lon = message.location.latitude, message.location.longitude
-    bot.send_message(chat_id, "Now share your <b>Drop-off Location:</b>",parse_mode="HTML")
+    bot.send_message(chat_id, "Now share your <b>Drop Location:</b>",parse_mode="HTML")
     bot.register_next_step_handler(message, get_drop_location, pickup_lat, pickup_lon)
 
 def get_drop_location(message, pickup_lat, pickup_lon):
